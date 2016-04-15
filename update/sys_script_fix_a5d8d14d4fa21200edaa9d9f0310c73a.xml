@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>(Demo) SlackScheduledJob</name>
+        <run_once>false</run_once>
+        <script><![CDATA[var slackMessage = "Scheduled Message - List of all new Change Requests for " + gs.getProperty('instance_name') + ": \n";
+
+var change = new GlideRecord('change_request');
+change.addEncodedQuery('active=true^state=-5');
+change.query();
+while(change.next()){
+	slackMessage+= "<" + gs.getProperty('glide.servlet.uri') + "/" + change.getLink() + "|" + change.getDisplayValue() + ">\n";
+}
+
+var sentMessage = sendSlackMessage(slackMessage);
+
+if(sentMessage != '200'){
+	gs.error('Error in sending message');
+}
+
+function sendSlackMessage(message) {
+	
+	var channel = '#general';
+	var botName = 'ConnectBot';
+	
+	var scu = new x_cc16_oauth.SlackConnectUtil();
+	var response = scu.sendMessage(channel, botName, message);
+	var httpStatus = response.getStatusCode();
+	
+	return httpStatus;
+
+}]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-01 05:19:58</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a5d8d14d4fa21200edaa9d9f0310c73a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>(Demo) SlackScheduledJob</sys_name>
+        <sys_package display_value="CC16-OAuthWorkshop" source="x_cc16_oauth">83b92ca47cea12007f44f46379a7ad90</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CC16-OAuthWorkshop">83b92ca47cea12007f44f46379a7ad90</sys_scope>
+        <sys_update_name>sys_script_fix_a5d8d14d4fa21200edaa9d9f0310c73a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-01 05:19:58</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

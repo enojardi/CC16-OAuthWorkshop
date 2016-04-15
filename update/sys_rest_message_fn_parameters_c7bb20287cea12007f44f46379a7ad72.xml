@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_parameters">
+    <sys_rest_message_fn_parameters action="INSERT_OR_UPDATE">
+        <name>token</name>
+        <rest_message_function display_value="post">b87a2ce47cea12007f44f46379a7adb5</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_parameters</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-03-30 12:45:25</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c7bb20287cea12007f44f46379a7ad72</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>token</sys_name>
+        <sys_package display_value="CC16-OAuthWorkshop" source="x_cc16_oauth">83b92ca47cea12007f44f46379a7ad90</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CC16-OAuthWorkshop">83b92ca47cea12007f44f46379a7ad90</sys_scope>
+        <sys_update_name>sys_rest_message_fn_parameters_c7bb20287cea12007f44f46379a7ad72</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-01 04:00:30</sys_updated_on>
+        <type>string</type>
+        <value>&lt;INSERT_TOKEN&gt;</value>
+    </sys_rest_message_fn_parameters>
+</record_update>

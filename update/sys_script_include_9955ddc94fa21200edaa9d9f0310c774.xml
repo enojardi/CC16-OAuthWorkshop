@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_cc16_oauth.SlackConnectUtil</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SlackConnectUtil</name>
+        <script><![CDATA[var SlackConnectUtil = Class.create();
+SlackConnectUtil.prototype = {
+	
+    initialize: function() {
+		
+    },
+	
+	sendMessage: function(channel, botName, message){
+		
+		var _channel = (!gs.nil(channel)) ? channel : '#general';
+		var _botName = (!gs.nil(botName)) ? botName : '';
+		var _message = (!gs.nil(message)) ? message : 'empty-message';
+		var asUser   = (_botName == '');
+		
+		var token = this.getAccessToken('Slack API');
+		
+		if(!gs.nil(token)){
+
+
+			//Step 2. Execute the REST call with no specific authentication
+			//i.e. REST function will use from its parent
+
+
+			try { 
+				var r = new sn_ws.RESTMessageV2('Slack API', 'post');
+
+				//Step 3. Add the HTTP parms
+				//Note: Slack requires the token to be sent as parm
+				//instead of Authorization header
+				r.setStringParameter('token', token);
+				r.setStringParameter('as_user', asUser);
+				if(!asUser){
+					r.setStringParameter('icon_emoji', ':now-icon:');
+					r.setStringParameter('username', _botName);
+				}
+				r.setStringParameterNoEscape('text', _message);
+				r.setStringParameter('channel', _channel);
+
+				var response = r.execute();
+				return response;
+
+			}
+			catch(ex) {
+				var message = ex.getMessage();
+				return message;
+			}
+		}
+		
+		return;
+		
+	},
+	
+	getAccessToken: function(restMessageName){
+		
+		var _token = '';
+		
+		var restMessage = new GlideRecord('sys_rest_message');
+		if(restMessage.get('name', restMessageName)){
+
+			var oauthEntityProfile = restMessage.getValue('oauth2_profile');
+			var oauthRequestorID   = restMessage.getUniqueValue();
+
+			var oAuthClient = new  sn_auth.GlideOAuthClient();
+			var token = oAuthClient.getToken(oauthRequestorID, oauthEntityProfile);
+			
+			_token = token.getAccessToken();
+		}
+		
+		return _token;	
+	},
+
+    type: 'SlackConnectUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-01 05:06:07</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>9955ddc94fa21200edaa9d9f0310c774</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>SlackConnectUtil</sys_name>
+        <sys_package display_value="CC16-OAuthWorkshop" source="x_cc16_oauth">83b92ca47cea12007f44f46379a7ad90</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CC16-OAuthWorkshop">83b92ca47cea12007f44f46379a7ad90</sys_scope>
+        <sys_update_name>sys_script_include_9955ddc94fa21200edaa9d9f0310c774</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-15 10:08:02</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <before>false</before>
+        <description/>
+        <flush_cache>false</flush_cache>
+        <name>(Demo) SlackConnectUtil</name>
+        <run_once>false</run_once>
+        <script><![CDATA[var message = 'Scripted test message from ' + gs.getProperty('instance_name');
+var channel = '#random';
+
+var scu = new x_cc16_oauth.SlackConnectUtil();
+var response = scu.sendMessage(channel, '', message);
+var responseBody = response.getBody();
+var httpStatus = response.getStatusCode();
+
+gs.info(httpStatus);
+gs.info(responseBody);]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-04-01 05:17:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5b58114d4fa21200edaa9d9f0310c7df</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>(Demo) SlackConnectUtil</sys_name>
+        <sys_package display_value="CC16-OAuthWorkshop" source="x_cc16_oauth">83b92ca47cea12007f44f46379a7ad90</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CC16-OAuthWorkshop">83b92ca47cea12007f44f46379a7ad90</sys_scope>
+        <sys_update_name>sys_script_fix_5b58114d4fa21200edaa9d9f0310c7df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-04-01 05:18:18</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>

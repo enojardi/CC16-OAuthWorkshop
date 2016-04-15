@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_rest_message_fn_param_defs">
+    <sys_rest_message_fn_param_defs action="INSERT_OR_UPDATE">
+        <name>icon_emoji</name>
+        <order>100</order>
+        <rest_message_function display_value="post">b87a2ce47cea12007f44f46379a7adb5</rest_message_function>
+        <sys_class_name>sys_rest_message_fn_param_defs</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-03-30 12:43:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>abdaace47cea12007f44f46379a7ad7f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>icon_emoji</sys_name>
+        <sys_package display_value="CC16-OAuthWorkshop" source="x_cc16_oauth">83b92ca47cea12007f44f46379a7ad90</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="CC16-OAuthWorkshop">83b92ca47cea12007f44f46379a7ad90</sys_scope>
+        <sys_update_name>sys_rest_message_fn_param_defs_abdaace47cea12007f44f46379a7ad7f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-03-30 12:43:07</sys_updated_on>
+        <value>${icon_emoji}</value>
+    </sys_rest_message_fn_param_defs>
+</record_update>
