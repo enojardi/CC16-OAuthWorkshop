@@ -16,7 +16,7 @@
         <logo_url/>
         <message_signature_lifespan>0</message_signature_lifespan>
         <name>Slack API</name>
-        <oauth_api_script display_value="">32dd36df7c1612007f44f46379a7ad0e</oauth_api_script>
+        <oauth_api_script display_value="OAuthSlackAPI">32dd36df7c1612007f44f46379a7ad0e</oauth_api_script>
         <redirect_url>https://YOUR-LAB-INSTANCE.service-now.com/oauth_redirect.do</redirect_url>
         <refresh_token_lifespan>8640000</refresh_token_lifespan>
         <revoke_token_url/>
