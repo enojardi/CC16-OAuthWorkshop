@@ -15,9 +15,9 @@ https://api.slack.com/methods/chat.postMessage</description>
         <sys_class_name>sys_rest_message</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-03-30 12:39:47</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>da4a6ca47cea12007f44f46379a7adb1</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Slack API</sys_name>
         <sys_package display_value="CC16-OAuthWorkshop" source="x_cc16_oauth">83b92ca47cea12007f44f46379a7ad90</sys_package>
         <sys_policy/>
@@ -25,7 +25,7 @@ https://api.slack.com/methods/chat.postMessage</description>
         <sys_scope display_value="CC16-OAuthWorkshop">83b92ca47cea12007f44f46379a7ad90</sys_scope>
         <sys_update_name>sys_rest_message_da4a6ca47cea12007f44f46379a7adb1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2016-04-15 10:32:13</sys_updated_on>
+        <sys_updated_on>2016-04-16 08:22:39</sys_updated_on>
         <use_basic_auth>false</use_basic_auth>
         <use_mutual_auth>false</use_mutual_auth>
     </sys_rest_message>
