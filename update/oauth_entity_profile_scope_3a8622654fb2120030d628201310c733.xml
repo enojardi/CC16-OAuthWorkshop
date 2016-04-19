@@ -6,7 +6,7 @@
         <sys_class_name>oauth_entity_profile_scope</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2016-04-15 10:31:40</sys_created_on>
-        <sys_customer_update>true</sys_customer_update>
+        <sys_customer_update>false</sys_customer_update>
         <sys_id>3a8622654fb2120030d628201310c733</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>b466ae254fb2120030d628201310c734</sys_name>
